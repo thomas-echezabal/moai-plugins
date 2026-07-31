@@ -1,0 +1,28 @@
+{
+  "name": "inbox-assistant",
+  "version": "3.5.0",
+  "description": "An Inbox Assistant for your business that reads email, prepares briefs, finds stalled follow-ups, and drafts replies with every action off until you enable it.",
+  "author": {
+    "name": "Mother of AI",
+    "url": "https://themotherofai.com"
+  },
+  "homepage": "https://themotherofai.com",
+  "repository": "https://github.com/thomas-echezabal/moai-plugins",
+  "keywords": ["email", "inbox", "follow-up", "small-business", "productivity"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Inbox Assistant",
+    "shortDescription": "Inbox briefs, follow-ups, and safe email drafts",
+    "longDescription": "Read email, prepare a daily inbox brief, find stalled follow-ups, draft replies in your voice, and schedule recurring reviews with every mailbox action disabled until you explicitly enable and test it.",
+    "developerName": "Mother of AI",
+    "category": "Productivity",
+    "capabilities": ["Interactive", "Read", "Write"],
+    "websiteURL": "https://themotherofai.com",
+    "defaultPrompt": [
+      "Set up my Inbox Assistant safely.",
+      "Give me a read-only brief of my inbox.",
+      "Show my Inbox Assistant status."
+    ],
+    "brandColor": "#F7FE91"
+  }
+}

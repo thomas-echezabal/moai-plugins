@@ -7,6 +7,10 @@ metadata:
 
 # Task Tuner
 
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before accessing project files, connectors, recurring tasks, or delegation. Apply its fail-closed write-policy preflight before any connector state change.
+
 A correction that only fixes today's output is a correction the owner has to repeat. This turns "the briefs are too long" into a line in a file that changes every future run.
 
 ## Contract block

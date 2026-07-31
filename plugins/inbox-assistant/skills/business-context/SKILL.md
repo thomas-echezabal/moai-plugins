@@ -7,6 +7,10 @@ metadata:
 
 # Business Context
 
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before accessing project files, connectors, recurring tasks, or delegation. Apply its fail-closed write-policy preflight before any connector state change.
+
 No skill in this plugin starts cold. Before a single message is ranked or a single draft is written, load the owner's files: four context files that say who they are and what is off limits, plus one state ledger that says what has already been done. They are the difference between a generic summary and a brief that sounds like it came from someone who works here.
 
 ## Contract block

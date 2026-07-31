@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Assistant Status"
+  short_description: "Audit Inbox Assistant without writing data"
+  default_prompt: "Use $inbox-assistant-status to show my Inbox Assistant status."

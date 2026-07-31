@@ -7,7 +7,11 @@ metadata:
 
 # Zapier Limits and Cost
 
-Use this skill when the user's request may not fit a Claude scheduled task, may not be possible through Zapier, or may cost more than expected. This skill is Zapier-specific; do not apply Zapier task costs to direct/native Claude connectors.
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before inspecting connectors or proposing scheduled work. Describe only the apps and MCP tools actually available in the current conversation.
+
+Use this skill when the user's request may not fit the current platform's scheduled-task feature, may not be possible through Zapier, or may cost more than expected. This skill is Zapier-specific; do not apply Zapier task costs to direct/native platform connectors.
 
 Keep the explanation short and plain, but never quote a limit, price, task count, or capability from memory.
 

@@ -1,5 +1,14 @@
 # Changelog
 
+## 3.5.0
+
+Inbox Assistant now installs and runs as a native ChatGPT/Codex plugin as well as a Claude Cowork plugin.
+
+- Added the Codex plugin manifest and MOAI Codex marketplace catalog.
+- Added Codex skill adapters for setup, test, schedule, status, tune, and pause. Each adapter delegates to the existing command workflow so both platforms use the same safety rules and behavior.
+- Added platform-aware guidance for namespaced commands, connector availability, project files, scheduled tasks, and agent fallbacks.
+- Added release validation that requires Claude and Codex manifests to match, requires both marketplace catalogs to contain every plugin exactly once, and installs every plugin through both CLIs in CI.
+
 ## 3.4.0
 
 Inbox Assistant now ships from the MOAI Plugins marketplace instead of as a file to download and upload.

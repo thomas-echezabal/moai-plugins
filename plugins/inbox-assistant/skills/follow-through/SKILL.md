@@ -7,6 +7,10 @@ metadata:
 
 # Follow-Through Finder
 
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before accessing project files, connectors, recurring tasks, or delegation. Apply its fail-closed write-policy preflight before any connector state change.
+
 The work that costs the most is the work nobody is chasing. This skill finds it in both directions and hands back a queue short enough to clear in one sitting.
 
 ## Contract block

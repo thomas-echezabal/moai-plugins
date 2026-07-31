@@ -1,13 +1,17 @@
 ---
 name: connector-discovery
-description: Helps Claude explain which connected apps it can actually use before designing a scheduled task, always verifying connector setup, capabilities, and per-app rules against live documentation rather than memory.
+description: Helps the assistant explain which connected apps it can actually use before designing a scheduled task, always verifying connector setup, capabilities, and per-app rules against live documentation rather than memory.
 metadata:
   version: 1.2.0
 ---
 
 # Connector Discovery
 
-Use this skill when the user wants to know what Claude can do with connected apps, or before designing any Claude scheduled task that uses app connectors. Two layers are usually in play: the native connectors Anthropic ships inside claude.ai, and Zapier. Survey both.
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before inspecting connectors or proposing scheduled work. Describe only the apps and MCP tools actually available in the current conversation.
+
+Use this skill when the user wants to know what the current assistant can do with connected apps, or before designing any scheduled task that uses app connectors. Two layers are usually in play: the current product's native connectors and Zapier. Survey both.
 
 Your job is to inspect the capabilities actually visible in the current chat, explain them in plain language, and flag anything missing, without ever stating a time-sensitive fact from memory.
 

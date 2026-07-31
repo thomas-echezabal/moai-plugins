@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Assistant Pause"
+  short_description: "Pause or resume Inbox Assistant tasks"
+  default_prompt: "Use $inbox-assistant-pause to pause my Inbox Assistant tasks."

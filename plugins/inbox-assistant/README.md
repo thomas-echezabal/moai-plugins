@@ -15,6 +15,17 @@ Cowork checks marketplace-installed plugins for updates. New versions load in a 
 
 If you previously uploaded Inbox Assistant as a file, uninstall that copy before installing this one. Your Inbox Assistant project files stay in place. Run `/inbox-assistant:status` in a new Cowork session to verify the move, and do not leave both copies installed.
 
+## Install in ChatGPT/Codex
+
+```bash
+codex plugin marketplace add thomas-echezabal/moai-plugins
+codex plugin add inbox-assistant@moai-plugins
+```
+
+Start a new Codex task after installation. Ask for setup, testing, scheduling, status, tuning, or pausing in plain language, type the familiar namespaced command, or select the matching `$inbox-assistant-*` skill. The Codex skills delegate to the same command workflows used by Claude.
+
+Connector names and recurring-task controls differ by product. Inbox Assistant uses only capabilities visible in the current conversation, preserves the same project files, and fails closed before writes when a required connector, action control, safety state, or platform capability is missing.
+
 ## If you had the old one
 
 This ships as a new plugin rather than an update, so the commands moved to a new namespace. If you installed **MOAI Chief of Staff**, remove it and install **Inbox Assistant**, then run `/inbox-assistant:setup`.

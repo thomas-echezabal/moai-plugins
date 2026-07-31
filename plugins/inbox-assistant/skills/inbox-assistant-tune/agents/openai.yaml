@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Assistant Tune"
+  short_description: "Tune Inbox Assistant output and scope"
+  default_prompt: "Use $inbox-assistant-tune to adjust my Inbox Assistant."

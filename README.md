@@ -1,6 +1,6 @@
 # MOAI Plugins
 
-The official Mother of AI plugin marketplace for Claude Cowork.
+The official Mother of AI plugin marketplace for Claude Cowork and ChatGPT/Codex. Every release carries both platform manifests, shares one plugin source, and is install-tested through both CLIs.
 
 ## Add the marketplace in Cowork
 
@@ -11,6 +11,19 @@ The official Mother of AI plugin marketplace for Claude Cowork.
    `https://github.com/thomas-echezabal/moai-plugins`
 
 4. Open the MOAI Plugins marketplace and install the plugin you want.
+
+## Add the marketplace in ChatGPT/Codex
+
+From Codex CLI, add the Git marketplace and install Inbox Assistant:
+
+```bash
+codex plugin marketplace add thomas-echezabal/moai-plugins
+codex plugin add inbox-assistant@moai-plugins
+```
+
+Then start a new Codex task so its skills load. In the Codex app, the same marketplace entry appears as **MOAI Plugins**. ChatGPT/Codex users can invoke the six workflows by intent or select the corresponding `$inbox-assistant-*` skill; typing the familiar `/inbox-assistant:setup` text also routes to the setup skill.
+
+Before this release reaches `main`, administrators can test the staged build with `codex plugin marketplace add thomas-echezabal/moai-plugins --ref preview`.
 
 ## Inbox Assistant
 
@@ -35,11 +48,19 @@ Cowork checks marketplace-installed plugins for updates. New versions load in a 
 
 If an update does not appear, open **Customize** → **Plugins**, open the MOAI Plugins marketplace, and select **Update**.
 
+For ChatGPT/Codex, refresh the Git marketplace, reinstall the plugin, and start a new task:
+
+```bash
+codex plugin marketplace upgrade moai-plugins
+codex plugin add inbox-assistant@moai-plugins
+```
+
 ## Troubleshooting
 
 - **Marketplace does not appear:** confirm the repository URL is exactly `https://github.com/thomas-echezabal/moai-plugins`, then try adding it again.
 - **Two Inbox Assistant entries appear:** uninstall the uploaded copy and keep the marketplace copy.
 - **Commands are missing after an update:** start a new Cowork session so the updated plugin is loaded.
+- **A slash command does not appear in Codex:** select the matching `$inbox-assistant-*` skill or ask for the workflow in plain language; the Claude slash command and Codex skill use the same source workflow.
 - **Inbox Assistant cannot read mail:** reconnect Gmail or Microsoft 365 under Claude **Settings** → **Connectors**, then run `/inbox-assistant:setup` again.
 
 For Academy support, use the Help Center or weekly office hours in the Mother of AI portal.

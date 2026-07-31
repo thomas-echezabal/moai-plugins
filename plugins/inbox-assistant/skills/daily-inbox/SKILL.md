@@ -7,6 +7,10 @@ metadata:
 
 # Daily Inbox
 
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before accessing project files, connectors, recurring tasks, or delegation. Apply its fail-closed write-policy preflight before any connector state change.
+
 The morning brief. The owner opens it with coffee, reads it in under three minutes, and knows what the inbox is asking of them: what needs them, what is already drafted, and what is safe to ignore. Everything that could be decided for them has a draft attached, and nothing has happened to the mailbox that they did not turn on.
 
 ## Contract block

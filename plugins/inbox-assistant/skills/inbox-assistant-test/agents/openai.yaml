@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Assistant Test"
+  short_description: "Test Inbox Assistant jobs and controls"
+  default_prompt: "Use $inbox-assistant-test to test my Inbox Assistant safely."

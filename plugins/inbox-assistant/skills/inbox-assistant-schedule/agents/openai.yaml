@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Assistant Schedule"
+  short_description: "Schedule verified Inbox Assistant jobs"
+  default_prompt: "Use $inbox-assistant-schedule to schedule an Inbox Assistant job."

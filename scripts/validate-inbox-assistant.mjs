@@ -88,6 +88,37 @@ for (const path of files(pluginRoot)) {
   }
 }
 
+for (const command of commandNames) {
+  const adapter = join(
+    pluginRoot,
+    "skills",
+    `inbox-assistant-${command}`,
+    "SKILL.md",
+  );
+  let source;
+  try {
+    source = readFileSync(adapter, "utf8");
+  } catch {
+    failures.push(`Missing Codex adapter for command "${command}".`);
+    continue;
+  }
+  if (!source.includes(`../../commands/${command}.md`)) {
+    failures.push(
+      `Codex adapter "${command}" must delegate to commands/${command}.md.`,
+    );
+  }
+  if (!source.includes("../../references/codex-compatibility.md")) {
+    failures.push(
+      `Codex adapter "${command}" must load codex-compatibility.md.`,
+    );
+  }
+  if (source.includes("[TODO:")) {
+    failures.push(
+      `Codex adapter "${command}" still contains a TODO placeholder.`,
+    );
+  }
+}
+
 const commandFiles = readdirSync(join(pluginRoot, "commands"))
   .filter((name) => name.endsWith(".md"))
   .map((name) => name.slice(0, -3))
@@ -105,5 +136,5 @@ if (failures.length > 0) {
 }
 
 process.stdout.write(
-  "Validated Inbox Assistant terminology, command surface, and neutral language.\n",
+  "Validated Inbox Assistant terminology, Claude commands, Codex adapters, and neutral language.\n",
 );

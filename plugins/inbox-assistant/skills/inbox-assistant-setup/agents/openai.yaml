@@ -1,0 +1,4 @@
+interface:
+  display_name: "Inbox Assistant Setup"
+  short_description: "Set up or repair Inbox Assistant safely"
+  default_prompt: "Use $inbox-assistant-setup to set up my Inbox Assistant safely."

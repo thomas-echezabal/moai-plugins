@@ -7,6 +7,10 @@ metadata:
 
 # Weekly Owner Reset
 
+## Platform compatibility
+
+When running in ChatGPT or Codex, read `../../references/codex-compatibility.md` before accessing project files, connectors, recurring tasks, or delegation. Preserve this skill's read-only contract on every platform.
+
 The daily brief keeps the owner on top of the day. This keeps them on top of the business. One page, read on a Friday afternoon, built on three things: what moved, what stalled, and the decisions only the owner can make.
 
 ## Contract block

@@ -31,6 +31,9 @@ jobs:
       - name: Install Claude Code validator
         run: npm install --global @anthropic-ai/claude-code@2.1.216
 
+      - name: Install Codex validator
+        run: npm install --global @openai/codex@0.145.0
+
       - name: Validate release policy
         shell: bash
         run: |
@@ -45,3 +48,12 @@ jobs:
 
       - name: Validate Anthropic plugin schemas
         run: claude plugin validate . --strict
+
+      - name: Install every plugin through Codex
+        shell: bash
+        run: |
+          codex plugin marketplace add "$GITHUB_WORKSPACE" --json
+          while IFS= read -r plugin; do
+            codex plugin add "$plugin@moai-plugins"
+          done < <(node -e 'for (const plugin of require("./.agents/plugins/marketplace.json").plugins) console.log(plugin.name)')
+          codex plugin list
