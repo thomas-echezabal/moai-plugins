@@ -1,5 +1,12 @@
 # Changelog
 
+## 3.5.2
+
+The write-policy guard still evaluates every MCP call, but now immediately allows calls outside its mail, calendar, contacts, and Zapier scope.
+
+- The guard's PreToolUse prompt gains a scope gate: it governs email, calendar, and contacts tools on the member's native claude.ai connectors plus the member's own Zapier MCP server, and allows every other MCP tool (browser and preview tools, session utilities, desktop automation, media and design servers) without applying the mail policy. Previously the deny-by-default rules blocked those unrelated tools in any session where the plugin was installed.
+- Fail-closed behavior is unchanged for in-scope calls: native-connector writes stay denied, Zapier writes still require enabled and tested action controls, and a tool the guard cannot confidently place is still treated as in scope and judged by the full policy.
+
 ## 3.5.1
 
 Inbox Assistant now documents Claude's native marketplace update behavior
