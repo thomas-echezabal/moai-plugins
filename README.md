@@ -10,7 +10,10 @@ The official Mother of AI plugin marketplace for Claude Cowork and ChatGPT/Codex
 
    `https://github.com/thomas-echezabal/moai-plugins`
 
-4. Open the MOAI Plugins marketplace and install the plugin you want.
+4. Open **MOAI Plugins** and turn on its **Auto-update** toggle. Claude leaves
+   automatic updates off by default for third-party marketplaces, so this is a
+   one-time setup step.
+5. Install the plugin you want, then start a new Cowork session so it loads.
 
 ## Add the marketplace in ChatGPT/Codex
 
@@ -44,9 +47,20 @@ The marketplace version uses the same plugin name, command namespace, and worksp
 
 ## Updates
 
-Cowork checks marketplace-installed plugins for updates. New versions load in a new session after Cowork applies the update. If you customized a plugin locally, Cowork warns you before replacing those edits.
+Claude's native marketplace updater is the supported update path. Do not install a
+separate updater or a SessionStart version-check hook. Once **Auto-update** is on
+for MOAI Plugins, Claude checks the marketplace after startup and downloads newer
+plugin versions in the background. Third-party marketplace auto-update is off by
+default, so adding the marketplace alone is not enough.
 
-If an update does not appear, open **Customize** → **Plugins**, open the MOAI Plugins marketplace, and select **Update**.
+The check can take several minutes, and a session keeps the plugin version it
+loaded at launch. Start a new session after an update; in Claude Code you can use
+`/reload-plugins` to load most plugin changes without restarting. If you customized
+a plugin locally, Claude warns you before replacing those edits.
+
+If an update does not appear, confirm **Auto-update** is enabled, open
+**Customize** → **Plugins**, open MOAI Plugins, and select **Update**. Then start a
+new session.
 
 For ChatGPT/Codex, refresh the Git marketplace, reinstall the plugin, and start a new task:
 
@@ -54,6 +68,8 @@ For ChatGPT/Codex, refresh the Git marketplace, reinstall the plugin, and start 
 codex plugin marketplace upgrade moai-plugins
 codex plugin add inbox-assistant@moai-plugins
 ```
+
+Claude's Auto-update toggle does not update Codex installations.
 
 ## Troubleshooting
 

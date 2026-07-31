@@ -168,6 +168,7 @@ for (const entry of entries) {
     );
   }
   const changelog = readFileSync(changelogPath, "utf8");
+  const readme = readFileSync(readmePath, "utf8");
   if (
     !new RegExp(`^## ${manifest.version.replaceAll(".", "\\.")}$`, "m").test(
       changelog,
@@ -175,6 +176,36 @@ for (const entry of entries) {
   ) {
     fail(
       `Plugin "${entry.name}" changelog is missing "## ${manifest.version}".`,
+    );
+  }
+
+  for (const heading of [
+    "## Install in Claude Cowork",
+    "## Updates",
+    "## Install in ChatGPT/Codex",
+  ]) {
+    if (!readme.split("\n").includes(heading)) {
+      fail(`Plugin "${entry.name}" README is missing "${heading}".`);
+    }
+  }
+  if (!/auto-update/i.test(readme) || !/third-party/i.test(readme)) {
+    fail(
+      `Plugin "${entry.name}" README must explain that Claude Auto-update is a one-time, third-party marketplace setting.`,
+    );
+  }
+  if (!/current\s+session\s+keeps\s+the\s+version\s+it\s+loaded/i.test(readme)) {
+    fail(
+      `Plugin "${entry.name}" README must explain that a running Claude session keeps its loaded plugin version.`,
+    );
+  }
+  if (!readme.includes("codex plugin marketplace upgrade moai-plugins")) {
+    fail(
+      `Plugin "${entry.name}" README must include the Codex marketplace upgrade command.`,
+    );
+  }
+  if (!readme.includes(`codex plugin add ${entry.name}@moai-plugins`)) {
+    fail(
+      `Plugin "${entry.name}" README must include its Codex install/reinstall command.`,
     );
   }
 }

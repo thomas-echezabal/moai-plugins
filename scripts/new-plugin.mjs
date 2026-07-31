@@ -88,7 +88,7 @@ writeFileSync(
 );
 writeFileSync(
   join(pluginRoot, "README.md"),
-  `# ${displayName}\n\n${description}\n`,
+  `# ${displayName}\n\n${description}\n\n## Install in Claude Cowork\n\n1. Open **Cowork** → **Customize** → **Plugins**.\n2. Under **Personal plugins**, select **+** → **Add marketplace**.\n3. Add \`https://github.com/thomas-echezabal/moai-plugins\` from a repository.\n4. Open **MOAI Plugins** and turn on its **Auto-update** toggle. Claude leaves automatic updates off by default for third-party marketplaces.\n5. Install **${displayName}**, then start a new Cowork session so it loads.\n\n## Updates\n\nClaude's native marketplace updater is the supported update path. When **Auto-update** is enabled, Claude checks for newer releases after startup. The check can take several minutes, and the current session keeps the version it loaded. Start a new session after an update; in Claude Code, \`/reload-plugins\` can load most changes immediately.\n\nIf an update does not appear, confirm **Auto-update** is enabled, open MOAI Plugins, select **Update**, and start a new session. Do not add a self-updater or a SessionStart network version check to this plugin.\n\n## Install in ChatGPT/Codex\n\n\`\`\`bash\ncodex plugin marketplace add thomas-echezabal/moai-plugins\ncodex plugin add ${slug}@moai-plugins\n\`\`\`\n\nStart a new Codex task so the plugin loads. To update it, refresh the marketplace, reinstall the plugin, and start another new task:\n\n\`\`\`bash\ncodex plugin marketplace upgrade moai-plugins\ncodex plugin add ${slug}@moai-plugins\n\`\`\`\n\nClaude's Auto-update toggle does not update Codex installations. Document any platform-specific capability differences and safe fallbacks below.\n`,
 );
 writeFileSync(
   join(pluginRoot, "CHANGELOG.md"),
@@ -135,5 +135,5 @@ writeFileSync(
 );
 
 process.stdout.write(
-  `Created dual Claude + ChatGPT/Codex plugin plugins/${slug} and added it to both marketplace catalogs.\n`,
+  `Created dual Claude + ChatGPT/Codex plugin plugins/${slug}, documented native update paths, and added it to both marketplace catalogs.\nNext: replace the scaffold workflow, preserve the README update sections, and follow docs/creating-and-releasing-plugins.md.\n`,
 );

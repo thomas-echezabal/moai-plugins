@@ -1,5 +1,21 @@
 # Changelog
 
+## 3.5.1
+
+Inbox Assistant now documents Claude's native marketplace update behavior
+explicitly.
+
+- Installation turns on Auto-update for MOAI Plugins because Claude leaves it off
+  by default for third-party marketplaces.
+- Update guidance explains that checks happen after startup and that the active
+  session keeps the plugin version it loaded until a new session or, in Claude
+  Code, `/reload-plugins`.
+- Codex keeps its separate marketplace upgrade and reinstall path. Claude's
+  Auto-update toggle does not update a Codex installation.
+- The plugin contains no self-updater, SessionStart network version check, or
+  stale-version blocker; Claude's native updater remains the only Claude update
+  mechanism.
+
 ## 3.5.0
 
 Inbox Assistant now installs and runs as a native ChatGPT/Codex plugin as well as a Claude Cowork plugin.

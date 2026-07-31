@@ -36,9 +36,23 @@ jobs:
 
       - name: Validate release policy
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_REF: ${{ github.base_ref }}
+          BEFORE_SHA: ${{ github.event.before }}
         run: |
-          if git show-ref --verify --quiet refs/remotes/origin/main && [ "$GITHUB_REF_NAME" != "main" ]; then
-            node scripts/validate-marketplace.mjs --base origin/main
+          base=""
+          if [ "$EVENT_NAME" = "pull_request" ] && [ -n "$BASE_REF" ]; then
+            git fetch origin "$BASE_REF"
+            base="origin/$BASE_REF"
+          elif [ "$EVENT_NAME" = "push" ] && [ -n "$BEFORE_SHA" ] && [ "$BEFORE_SHA" != "0000000000000000000000000000000000000000" ]; then
+            if git cat-file -e "$BEFORE_SHA^{commit}" 2>/dev/null; then
+              base="$BEFORE_SHA"
+            fi
+          fi
+
+          if [ -n "$base" ]; then
+            node scripts/validate-marketplace.mjs --base "$base"
           else
             node scripts/validate-marketplace.mjs
           fi
