@@ -7,7 +7,7 @@ on:
       - main
       - preview
   schedule:
-    - cron: '17 10 * * 1'
+    - cron: "17 10 * * 1"
   workflow_dispatch:
 
 permissions:
@@ -39,6 +39,9 @@ jobs:
           else
             node scripts/validate-marketplace.mjs
           fi
+
+      - name: Validate Inbox Assistant content
+        run: node scripts/validate-inbox-assistant.mjs
 
       - name: Validate Anthropic plugin schemas
         run: claude plugin validate . --strict

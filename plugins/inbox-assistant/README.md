@@ -4,6 +4,17 @@ An Inbox Assistant for your business. It reads your email, brings you a morning 
 
 It runs on Claude's servers on a schedule, so your laptop can be closed.
 
+## Install from MOAI Plugins
+
+1. In Cowork, open **Customize** → **Plugins**.
+2. Under **Personal plugins**, select **+** → **Add marketplace**.
+3. Add `https://github.com/thomas-echezabal/moai-plugins` from a repository.
+4. Open **MOAI Plugins** and install **Inbox Assistant**.
+
+Cowork checks marketplace-installed plugins for updates. New versions load in a new session after Cowork applies the update.
+
+If you previously uploaded Inbox Assistant as a file, uninstall that copy before installing this one. Your Inbox Assistant project files stay in place. Run `/inbox-assistant:status` in a new Cowork session to verify the move, and do not leave both copies installed.
+
 ## If you had the old one
 
 This ships as a new plugin rather than an update, so the commands moved to a new namespace. If you installed **MOAI Chief of Staff**, remove it and install **Inbox Assistant**, then run `/inbox-assistant:setup`.
@@ -32,14 +43,14 @@ What it will never do, whatever you turn on: buy, pay, refund, subscribe, sign, 
 
 ## Commands
 
-| Command | What it does |
-|---|---|
-| `/inbox-assistant:setup` | Stage 1, stage 2, upgrades, and repairs. Start here. |
-| `/inbox-assistant:test` | Run one skill on your real data, or test an action you turned on. |
-| `/inbox-assistant:schedule` | Put one skill on a cadence as a cloud scheduled task. |
-| `/inbox-assistant:status` | What is connected, what is on, what is scheduled, what did not finish. Reads only. |
-| `/inbox-assistant:tune` | Say what is wrong with a brief in plain words. Also where you narrow where an action applies or switch it off. |
-| `/inbox-assistant:pause` | Stop everything with `all`, or pause, resume, or remove one task. |
+| Command                     | What it does                                                                                                   |
+| --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `/inbox-assistant:setup`    | Stage 1, stage 2, upgrades, and repairs. Start here.                                                           |
+| `/inbox-assistant:test`     | Run one skill on your real data, or test an action you turned on.                                              |
+| `/inbox-assistant:schedule` | Put one skill on a cadence as a cloud scheduled task.                                                          |
+| `/inbox-assistant:status`   | What is connected, what is on, what is scheduled, what did not finish. Reads only.                             |
+| `/inbox-assistant:tune`     | Say what is wrong with a brief in plain words. Also where you narrow where an action applies or switch it off. |
+| `/inbox-assistant:pause`    | Stop everything with `all`, or pause, resume, or remove one task.                                              |
 
 ## What it connects to
 

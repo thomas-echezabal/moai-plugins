@@ -1,5 +1,23 @@
 # Changelog
 
+## 3.4.0
+
+Inbox Assistant now ships from the MOAI Plugins marketplace instead of as a file to download and upload.
+
+### What changes
+
+Install the MOAI Plugins marketplace from `https://github.com/thomas-echezabal/moai-plugins`, then install Inbox Assistant from that marketplace. Cowork can check marketplace-installed plugins for new versions, so later fixes and improvements no longer depend on downloading another file.
+
+### If you installed the downloaded file
+
+Remove the uploaded Inbox Assistant, add the MOAI Plugins marketplace, and install Inbox Assistant from it. Then start a new Cowork session and run `/inbox-assistant:status`.
+
+The plugin name, `/inbox-assistant:` commands, project files, action controls, ledger, and scheduled-task prompts are unchanged. Do not keep the uploaded and marketplace copies installed together.
+
+### What did not change
+
+Every action still starts switched off. The enable ritual, the auditor, receipts, kill switch, escalation categories, email-only scope, and voice guide work exactly as they did in 3.3.1.
+
 ## 3.3.1
 
 Your Inbox Assistant stopped deciding your gender.
@@ -123,12 +141,12 @@ The jobs are the same: your daily brief, your follow-through queue, and your wee
 
 Your saved files come across. The old plugin wrote them with a prefix in the name, and setup finds those, renames them, and changes nothing inside them:
 
-| Old file | New file |
-|---|---|
-| MOAI Business Profile | Business Profile |
-| MOAI Approved Sources | Approved Sources |
-| MOAI Boundaries | Boundaries |
-| MOAI Task Settings | Task Settings |
+| Old file                  | New file              |
+| ------------------------- | --------------------- |
+| MOAI Business Profile     | Business Profile      |
+| MOAI Approved Sources     | Approved Sources      |
+| MOAI Boundaries           | Boundaries            |
+| MOAI Task Settings        | Task Settings         |
 | MOAI Chief of Staff State | Inbox Assistant State |
 
 Your VIPs, your boundaries, your tuning history, your last-tested records, and every action you had turned on all survive the rename. Setup says in one line that it renamed them, and moves on. Scheduled tasks created from here carry the new name prefix, and an old one gets recreated rather than renamed.
