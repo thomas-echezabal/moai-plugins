@@ -7,14 +7,18 @@ MCP server for an unresolved mail connector.
 
 - A descriptive, non-UUID server identity plus a matching unrelated tool
   capability is now sufficient positive evidence to allow the call, even when
-  the server is unfamiliar and the operation writes. The guard no longer
-  requires unrelated servers to belong to a named allowlist.
+  the server is unfamiliar and the operation writes, provided the server has no
+  email, calendar, contacts, or Zapier capability. Email-capable CRM, sales,
+  marketing, support, and messaging vendors remain in scope regardless of their
+  broader product label. The guard no longer requires unrelated servers to
+  belong to a named allowlist.
 - Opaque and UUID-named servers, Zapier tools, and anything plausibly involving
   email, calendar, or contacts remain in scope and fail closed. Native mail
   writes stay denied, read-only mail calls stay allowed, and Zapier writes still
   need visible enabled-and-tested controls and an off kill switch.
 - Release validation now carries a cross-platform hook-policy regression matrix
-  and tests the Claude prompt against the matching Codex manual preflight.
+  bounded to each numbered rule, proves inverted allow/deny decisions fail, and
+  tests the Claude prompt against the matching Codex manual preflight.
 
 ## 3.5.2
 
