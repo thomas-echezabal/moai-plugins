@@ -14,6 +14,7 @@
       SessionStart network version check, or stale-version blocker.
 - [ ] Claude-specific capabilities have explicit safe Codex fallbacks.
 - [ ] `node scripts/validate-marketplace.mjs --base origin/main` passes.
+- [ ] `node scripts/test-inbox-assistant-hook.mjs` passes.
 - [ ] `claude plugin validate . --strict` passes.
 - [ ] Clean installation and the relevant update/migration paths were tested in
       both Claude and Codex.

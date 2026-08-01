@@ -1,7 +1,7 @@
 {
   "name": "inbox-assistant",
   "displayName": "Inbox Assistant",
-  "version": "3.5.2",
+  "version": "3.5.3",
   "description": "An Inbox Assistant for your business that reads your email, brings you a morning brief, chases what has gone quiet, and writes every reply as a draft. Every action it could take on your behalf starts switched off, and you turn them on one at a time.",
   "author": {
     "name": "Mother of AI"

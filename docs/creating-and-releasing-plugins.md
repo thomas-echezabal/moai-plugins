@@ -111,6 +111,7 @@ Fetch the current release baseline and run:
 ```bash
 git fetch origin main
 node scripts/validate-marketplace.mjs --base origin/main
+node scripts/test-inbox-assistant-hook.mjs
 claude plugin validate . --strict
 ```
 
