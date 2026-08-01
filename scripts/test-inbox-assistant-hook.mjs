@@ -71,6 +71,12 @@ function validatePromptPolicy(source) {
         /mcp__inventory-notes__write_note[\s\S]*?no email, calendar, contacts, or Zapier capability[\s\S]*?must return ALLOW/,
     },
     {
+      label: "renamed Zapier server stays in scope",
+      section: sections.rules.get(0),
+      pattern:
+        /exact tool name appears as the Zapier tool name in Task Settings[\s\S]*?positive evidence that it belongs to the member's Zapier server[\s\S]*?IN scope/,
+    },
+    {
       label: "email-capable vendors stay in scope",
       section: sections.rules.get(0),
       pattern:
@@ -202,6 +208,7 @@ const codexPreflight = codexPolicy
   .join("\n");
 for (const pattern of [
   /same scope gate/,
+  /exact tool name[\s\S]*?Zapier tool name in Task Settings[\s\S]*?stays in scope/,
   /unrelated domain[\s\S]*?allowed only when[\s\S]*?no email, calendar, contacts, or Zapier capability/,
   /email-capable CRM, sales, marketing, support, and messaging vendors do not/,
   /opaque or UUID-named server[\s\S]*?fails closed/,
